@@ -61,12 +61,7 @@ class GenreTableTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        
 
-        return 0
-        
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             print("rows!")
@@ -84,7 +79,7 @@ class GenreTableTableViewController: UITableViewController {
 
        cell.textLabel?.text = movie
        cell.detailTextLabel?.text = movie.description
-        
+        print("make a cell!")
         return cell
     }
     
