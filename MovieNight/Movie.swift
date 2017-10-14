@@ -11,7 +11,7 @@ import Foundation
 struct Results: Codable {
     
     var id: Int
-    var page: String
+    var page: Int
     var results: [Movie]
     
 }

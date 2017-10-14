@@ -14,9 +14,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
         
-        let networkManager = NetworkManager()
-        
-        networkManager.fetchGenre()
         
         
     }

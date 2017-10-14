@@ -33,3 +33,8 @@ enum GenreID: String {
     case Western = "37"
     
 }
+
+enum MovieError {
+    
+    case invalidData
+}
