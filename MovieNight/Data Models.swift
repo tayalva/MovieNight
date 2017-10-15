@@ -32,6 +32,16 @@ enum GenreID: String {
     case War = "10752"
     case Western = "37"
     
+    static let allValues = [Action, Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Fantasy, History, Horror, Music, Mystery, Romance, ScienceFiction, TVmovie, Thriller, War, Western]
+    
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case ScienceFiction = "Science Fiction"
+        case TVmovie = "TV Movie"
+        
+    }
+    
 }
 
 enum MovieError {

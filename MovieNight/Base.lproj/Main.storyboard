@@ -76,20 +76,20 @@
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="128.18590704647679"/>
         </scene>
-        <!--Pick A Genre-->
+        <!--Pick 3 Genres-->
         <scene sceneID="zDG-ky-GCl">
             <objects>
                 <tableViewController id="lMk-Tf-bFk" customClass="GenreTableTableViewController" customModule="MovieNight" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iNf-ja-474">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iNf-ja-474">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="genreCell" id="6eY-gS-6Hh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="genreCell" id="6eY-gS-6Hh" customClass="GenreTableViewCell" customModule="MovieNight" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6eY-gS-6Hh" id="XOp-3x-TgE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6eY-gS-6Hh" id="XOp-3x-TgE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -99,16 +99,19 @@
                             <outlet property="delegate" destination="lMk-Tf-bFk" id="zLT-I5-8Bi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pick A Genre" id="wcl-D4-8lQ">
+                    <navigationItem key="navigationItem" title="Pick 3 Genres" id="wcl-D4-8lQ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="UIa-SA-Di1"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="aVz-xE-scG">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="nextButton:" destination="lMk-Tf-bFk" id="CEz-C8-FeZ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYT-Fx-m9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656.8" y="126.38680659670166"/>
+            <point key="canvasLocation" x="1656.5" y="125.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hPV-ai-1V6">

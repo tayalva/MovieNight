@@ -7,7 +7,7 @@
 //
 
 import Foundation
-var genreSelected: GenreID = .Action
+var genreSelected: GenreID = .Animation
 
 class NetworkManager {
     

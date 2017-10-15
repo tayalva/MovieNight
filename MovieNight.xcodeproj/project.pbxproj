@@ -16,6 +16,7 @@
 		A62284871F8BF97100110EC5 /* Data Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284861F8BF97100110EC5 /* Data Models.swift */; };
 		A62284A91F8C22BE00110EC5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284A81F8C22BE00110EC5 /* Movie.swift */; };
 		A62284CD1F901C4E00110EC5 /* GenreTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284CC1F901C4E00110EC5 /* GenreTableTableViewController.swift */; };
+		A6ABA6AA1F9296EF00E51625 /* GenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6A91F9296EF00E51625 /* GenreTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A62284861F8BF97100110EC5 /* Data Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Models.swift"; sourceTree = "<group>"; };
 		A62284A81F8C22BE00110EC5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A62284CC1F901C4E00110EC5 /* GenreTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTableTableViewController.swift; sourceTree = "<group>"; };
+		A6ABA6A91F9296EF00E51625 /* GenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				A62284861F8BF97100110EC5 /* Data Models.swift */,
 				A62284A81F8C22BE00110EC5 /* Movie.swift */,
 				A62284CC1F901C4E00110EC5 /* GenreTableTableViewController.swift */,
+				A6ABA6A91F9296EF00E51625 /* GenreTableViewCell.swift */,
 				A62284761F8A999900110EC5 /* Main.storyboard */,
 				A62284791F8A999900110EC5 /* Assets.xcassets */,
 				A622847B1F8A999900110EC5 /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 				A62284871F8BF97100110EC5 /* Data Models.swift in Sources */,
 				A62284731F8A999900110EC5 /* AppDelegate.swift in Sources */,
 				A62284CD1F901C4E00110EC5 /* GenreTableTableViewController.swift in Sources */,
+				A6ABA6AA1F9296EF00E51625 /* GenreTableViewCell.swift in Sources */,
 				A62284A91F8C22BE00110EC5 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
