@@ -12,6 +12,7 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var nextButton: UIButton!
     
     
     
@@ -53,6 +54,8 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 91/255.0, green: 184/255.0, blue: 222/255.0, alpha: 1)
+        nextButton.isEnabled = false
+        nextButton.alpha = 0.3
         networkRequest()
         
         
@@ -136,6 +139,14 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.selectionMark.image = #imageLiteral(resourceName: "EmptySelection")
             maxSelection += 1
             genreSelectionArray = genreSelectionArray.filter {$0 != genreArray[indexPath.row]}
+        }
+        
+        if maxSelection == 0 {
+            nextButton.alpha = 1.0
+            nextButton.isEnabled = true
+        } else if maxSelection != 0 {
+            nextButton.alpha = 0.30
+            nextButton.isEnabled = false
         }
         
         print(genreSelectionArray)

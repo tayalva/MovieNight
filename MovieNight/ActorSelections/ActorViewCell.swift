@@ -1,5 +1,5 @@
 //
-//  ActorTableViewCell.swift
+//  ActorViewCell.swift
 //  MovieNight
 //
 //  Created by Taylor Smith on 10/16/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActorTableViewCell: UITableViewCell {
+class ActorViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
