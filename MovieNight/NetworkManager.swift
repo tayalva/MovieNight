@@ -46,14 +46,48 @@ class NetworkManager {
          
             
         } .resume()
-        
-     
-        
- 
-        
-        
-        
     }
+    
+////////////////////////////////////////////////////////////
+    
+    func fetchActor(completion: @escaping ([Actor]?, MovieError?)-> Void) {
+        
+        
+        let url = "\(baseURL)person/popular?\(apiKey)&sort_by=created_at.asc"
+        
+        let apiUrl = URL(string: url)!
+        
+        URLSession.shared.dataTask(with: apiUrl) {
+            (data, response, error) in
+            
+            guard let responseData = data else {
+                print("no data!")
+                completion(nil, .invalidData)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            if let actorArray = try? decoder.decode(ActorResults.self, from: responseData){
+                
+                completion(actorArray.results, nil)
+                
+                
+            } else {
+                
+                print("not decoded properly")
+            }
+            
+            
+            
+            } .resume()
+    
+    
+    
+    }
+    
+    
+    
+    
     
 }
 
