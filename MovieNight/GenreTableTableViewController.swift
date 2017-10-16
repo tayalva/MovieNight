@@ -114,7 +114,7 @@ class GenreTableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "genreCell", for: indexPath) as! GenreTableViewCell
 
        cell.textLabel?.text = genreStringArray[indexPath.row]
-        cell.imageView?.image = #imageLiteral(resourceName: "EmptySelection")
+
        
    
         
@@ -125,18 +125,18 @@ class GenreTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(genreStringArray[indexPath.row])
         
-        let cell = tableView.cellForRow(at: indexPath)
-    
-   
-        if cell?.imageView?.image == #imageLiteral(resourceName: "EmptySelection") && maxSelection != 0 {
+        let cell = tableView.cellForRow(at: indexPath) as! GenreTableViewCell
+        
+
+        if cell.selectionMark.image == #imageLiteral(resourceName: "EmptySelection") && maxSelection != 0 {
             
-        cell?.imageView?.image = #imageLiteral(resourceName: "SelectedCircle")
+        cell.selectionMark.image = #imageLiteral(resourceName: "SelectedCircle")
            maxSelection -= 1
             genreSelectionArray.append(genreArray[indexPath.row])
             
-        } else if cell?.imageView?.image == #imageLiteral(resourceName: "SelectedCircle") {
+        } else if cell.selectionMark.image == #imageLiteral(resourceName: "SelectedCircle") {
             
-            cell?.imageView?.image = #imageLiteral(resourceName: "EmptySelection")
+            cell.selectionMark.image = #imageLiteral(resourceName: "EmptySelection")
             maxSelection += 1
             genreSelectionArray = genreSelectionArray.filter {$0 != genreArray[indexPath.row]}
         }

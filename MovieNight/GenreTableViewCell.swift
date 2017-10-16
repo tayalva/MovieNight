@@ -11,6 +11,7 @@ import UIKit
 class GenreTableViewCell: UITableViewCell {
 
   
+    @IBOutlet weak var selectionMark: UIImageView!
     
     
     
