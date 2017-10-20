@@ -2,7 +2,7 @@
 //  ActorViewCell.swift
 //  MovieNight
 //
-//  Created by Taylor Smith on 10/16/17.
+//  Created by Taylor Smith on 10/20/17.
 //  Copyright © 2017 Taylor Smith. All rights reserved.
 //
 
@@ -10,6 +10,9 @@ import UIKit
 
 class ActorViewCell: UITableViewCell {
 
+    @IBOutlet weak var selectionMark: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

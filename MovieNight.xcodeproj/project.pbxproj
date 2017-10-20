@@ -15,12 +15,12 @@
 		A62284851F8A9A2500110EC5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284841F8A9A2500110EC5 /* NetworkManager.swift */; };
 		A62284871F8BF97100110EC5 /* Data Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284861F8BF97100110EC5 /* Data Models.swift */; };
 		A62284A91F8C22BE00110EC5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284A81F8C22BE00110EC5 /* Movie.swift */; };
+		A697A4F41F9A5D52009E17D0 /* ActorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697A4F31F9A5D52009E17D0 /* ActorViewCell.swift */; };
 		A6ABA6B01F953F7000E51625 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6AF1F953F7000E51625 /* Actor.swift */; };
 		A6ABA6B21F954B3C00E51625 /* ActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6B11F954B3C00E51625 /* ActorViewController.swift */; };
 		A6ABA6B41F955AC100E51625 /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6B31F955AC100E51625 /* GenreViewController.swift */; };
 		A6ABA6B61F955CA100E51625 /* GenreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6B51F955CA100E51625 /* GenreViewCell.swift */; };
 		A6C1614D1F9563BB001F71CC /* TimePeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1614C1F9563BB001F71CC /* TimePeriodViewController.swift */; };
-		A6C161541F956B40001F71CC /* ActorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C161531F956B40001F71CC /* ActorViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,12 +34,12 @@
 		A62284841F8A9A2500110EC5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A62284861F8BF97100110EC5 /* Data Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Models.swift"; sourceTree = "<group>"; };
 		A62284A81F8C22BE00110EC5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A697A4F31F9A5D52009E17D0 /* ActorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewCell.swift; sourceTree = "<group>"; };
 		A6ABA6AF1F953F7000E51625 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		A6ABA6B11F954B3C00E51625 /* ActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewController.swift; sourceTree = "<group>"; };
 		A6ABA6B31F955AC100E51625 /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
 		A6ABA6B51F955CA100E51625 /* GenreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewCell.swift; sourceTree = "<group>"; };
 		A6C1614C1F9563BB001F71CC /* TimePeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriodViewController.swift; sourceTree = "<group>"; };
-		A6C161531F956B40001F71CC /* ActorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A6ABA6B11F954B3C00E51625 /* ActorViewController.swift */,
-				A6C161531F956B40001F71CC /* ActorViewCell.swift */,
+				A697A4F31F9A5D52009E17D0 /* ActorViewCell.swift */,
 			);
 			path = ActorSelections;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A62284851F8A9A2500110EC5 /* NetworkManager.swift in Sources */,
-				A6C161541F956B40001F71CC /* ActorViewCell.swift in Sources */,
+				A697A4F41F9A5D52009E17D0 /* ActorViewCell.swift in Sources */,
 				A6C1614D1F9563BB001F71CC /* TimePeriodViewController.swift in Sources */,
 				A62284751F8A999900110EC5 /* ViewController.swift in Sources */,
 				A6ABA6B61F955CA100E51625 /* GenreViewCell.swift in Sources */,

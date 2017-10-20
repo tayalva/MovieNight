@@ -13,6 +13,10 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var actorArray: [String] = []
+    var actorSelection: [String] = []
+    var maxSelection: Int = 3
+    
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,19 +70,53 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 20
+        return actorArray.count
     }
     
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "actorCell", for: indexPath) as! ActorTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "actorCell", for: indexPath) as! ActorViewCell
         
+        let item = actorArray[indexPath.row]
         
+        cell.textLabel?.text = item
         
-        cell.textLabel?.text = actorArray[indexPath.row]
+        if actorSelection.contains(item) {
+            
+            cell.selectionMark.image = #imageLiteral(resourceName: "SelectedCircle")
+        } else { cell.selectionMark.image = #imageLiteral(resourceName: "EmptySelection") }
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ActorViewCell
+        print(indexPath)
+        
+        if cell.selectionMark.image == #imageLiteral(resourceName: "EmptySelection") && maxSelection != 0 {
+            
+            cell.selectionMark.image = #imageLiteral(resourceName: "SelectedCircle")
+            maxSelection -= 1
+            actorSelection.append(actorArray[indexPath.row])
+            
+        } else if cell.selectionMark.image == #imageLiteral(resourceName: "SelectedCircle") {
+            
+            cell.selectionMark.image = #imageLiteral(resourceName: "EmptySelection")
+            maxSelection += 1
+            actorSelection = actorSelection.filter {$0 != actorArray[indexPath.row]}
+        }
+        
+        if maxSelection == 0 {
+            nextButton.alpha = 1.0
+            nextButton.isEnabled = true
+        } else if maxSelection != 0 {
+            nextButton.alpha = 0.30
+            nextButton.isEnabled = false
+        }
+        
+        print(actorSelection)
+}
+    
     
     
     /*

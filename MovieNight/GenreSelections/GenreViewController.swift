@@ -78,9 +78,7 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.movieArray.append(movie.title)
                 }
                 
-                
-                
-                print(self.movieArray)
+            
                 self.makeGenreArray()
                 
                 OperationQueue.main.addOperation {
@@ -106,18 +104,25 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    
-    
+ 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "genreCell", for: indexPath) as! GenreViewCell
         
-        cell.textLabel?.text = genreStringArray[indexPath.row]
+        let item = genreStringArray[indexPath.row]
+        let currentGenre = genreArray[indexPath.row]
+        
+        cell.textLabel?.text = item
+        
+        if genreSelectionArray.contains(currentGenre) {
+            
+            cell.selectionMark.image = #imageLiteral(resourceName: "SelectedCircle")
+        } else { cell.selectionMark.image = #imageLiteral(resourceName: "EmptySelection") }
         
         
-        
-        
+     
+
         return cell
     }
     
@@ -126,7 +131,7 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print(genreStringArray[indexPath.row])
         
         let cell = tableView.cellForRow(at: indexPath) as! GenreViewCell
-        
+        print(indexPath)
         
         if cell.selectionMark.image == #imageLiteral(resourceName: "EmptySelection") && maxSelection != 0 {
             
