@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61EC80C1F9E4983002F6C68 /* TimePeriodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61EC80B1F9E4983002F6C68 /* TimePeriodViewCell.swift */; };
 		A62284731F8A999900110EC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284721F8A999900110EC5 /* AppDelegate.swift */; };
 		A62284751F8A999900110EC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284741F8A999900110EC5 /* ViewController.swift */; };
 		A62284781F8A999900110EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A62284761F8A999900110EC5 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A61EC80B1F9E4983002F6C68 /* TimePeriodViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriodViewCell.swift; sourceTree = "<group>"; };
 		A622846F1F8A999900110EC5 /* MovieNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62284721F8A999900110EC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A62284741F8A999900110EC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				A6C1614C1F9563BB001F71CC /* TimePeriodViewController.swift */,
+				A61EC80B1F9E4983002F6C68 /* TimePeriodViewCell.swift */,
 			);
 			path = TimeSelections;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				A697A4F41F9A5D52009E17D0 /* ActorViewCell.swift in Sources */,
 				A6C1614D1F9563BB001F71CC /* TimePeriodViewController.swift in Sources */,
 				A62284751F8A999900110EC5 /* ViewController.swift in Sources */,
+				A61EC80C1F9E4983002F6C68 /* TimePeriodViewCell.swift in Sources */,
 				A6ABA6B61F955CA100E51625 /* GenreViewCell.swift in Sources */,
 				A62284871F8BF97100110EC5 /* Data Models.swift in Sources */,
 				A6ABA6B41F955AC100E51625 /* GenreViewController.swift in Sources */,
