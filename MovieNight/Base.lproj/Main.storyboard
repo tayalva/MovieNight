@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-selected" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-Qw-0tL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-empty" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-Qw-0tL">
                                 <rect key="frame" x="143" y="70" width="87" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -48,7 +48,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="PersonIcon"/>
                                 <connections>
-                                    <segue destination="6SH-yC-WnQ" kind="presentation" modalTransitionStyle="crossDissolve" id="2ah-SZ-jE6"/>
+                                    <action selector="watcherButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ke2-iS-G49"/>
+                                    <segue destination="6SH-yC-WnQ" kind="presentation" identifier="GenreViewSegue" modalTransitionStyle="crossDissolve" id="2ah-SZ-jE6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watcher 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCP-FO-cYY">
@@ -66,15 +67,79 @@
                                 <rect key="frame" x="136" y="421" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="PersonIcon"/>
+                                <connections>
+                                    <action selector="watcherButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PtJ-uK-WSs"/>
+                                    <segue destination="6SH-yC-WnQ" kind="presentation" identifier="GenreViewSegue" modalTransitionStyle="crossDissolve" id="jSv-Oh-WV1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.35578557848930359" green="0.71963495016098022" blue="0.87009733915328979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="watcherBubble1" destination="kTK-Qw-0tL" id="NKy-hi-lhz"/>
+                        <outlet property="watcherBubble2" destination="vHR-iH-xsw" id="hHL-aT-rgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="128.18590704647679"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="z6v-5b-NgF">
+            <objects>
+                <viewController id="9EC-yR-yZy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0da-AM-upM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lY3-FA-N7B">
+                                <rect key="frame" x="0.0" y="64" width="375" height="558"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movieCell" id="VdV-iX-73b" customClass="GenreViewCell" customModule="MovieNight" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VdV-iX-73b" id="uKS-Nf-zml">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6SH-yC-WnQ" id="pzd-Vu-CjT"/>
+                                    <outlet property="delegate" destination="6SH-yC-WnQ" id="lw3-lN-Ffr"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guk-qi-Kp0">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.44638282060000001" green="0.75531333680000001" blue="0.88503533599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <state key="normal" title="Start Again">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="6SH-yC-WnQ" eventType="touchUpInside" id="MLa-wI-pnu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Suggestions:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drc-Ff-eSg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.44638282060000001" green="0.75531333680000001" blue="0.88503533599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.44638282060000001" green="0.75531333680000001" blue="0.88503533599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="CKN-yJ-Qy7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y5U-yf-yjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.59999999999999" y="806.44677661169419"/>
         </scene>
         <!--Genre View Controller-->
         <scene sceneID="WnT-Ep-TwE">
@@ -128,7 +193,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jn3-VV-L83" kind="presentation" modalTransitionStyle="crossDissolve" id="Qxe-tI-Q7N"/>
+                                    <action selector="nextButton:" destination="6SH-yC-WnQ" eventType="touchUpInside" id="cBL-iC-RPG"/>
+                                    <segue destination="jn3-VV-L83" kind="presentation" identifier="ActorViewSegue" modalTransitionStyle="crossDissolve" id="Qxe-tI-Q7N"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick 3 Genres" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sg-0P-zNq">
@@ -205,7 +271,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="k9U-TU-bcy" kind="presentation" modalTransitionStyle="crossDissolve" id="QcX-3U-GSh"/>
+                                    <action selector="nextButton:" destination="jn3-VV-L83" eventType="touchUpInside" id="RYE-7k-mkm"/>
+                                    <segue destination="k9U-TU-bcy" kind="presentation" identifier="TimePeriodViewSegue" modalTransitionStyle="crossDissolve" id="QcX-3U-GSh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick 3 Popular Actors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBy-xG-Sok">
@@ -283,7 +350,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="crossDissolve" id="g7E-sq-zF9"/>
+                                    <action selector="finishButton:" destination="k9U-TU-bcy" eventType="touchUpInside" id="tzX-iY-Uwo"/>
+                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="MainViewSegue" modalTransitionStyle="crossDissolve" id="g7E-sq-zF9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick A Release Time Period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-aE-OUM">
@@ -312,6 +380,8 @@
         <image name="EmptySelection" width="42" height="43"/>
         <image name="PersonIcon" width="411" height="410"/>
         <image name="bubble-empty" width="123" height="97"/>
-        <image name="bubble-selected" width="123" height="97"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jSv-Oh-WV1"/>
+    </inferredMetricsTieBreakers>
 </document>

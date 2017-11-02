@@ -9,6 +9,14 @@
 import Foundation
 
 
+    
+
+var genreSelection1G: [GenreID] = []
+var genreSelection2G: [GenreID] = []
+var actorSelection1G: [String] = []
+var actorSelection2G: [String] = []
+var timePeriodSelectionG: String = ""
+
 
 enum GenreID: Int {
     
@@ -43,6 +51,8 @@ enum GenreID: Int {
     }
     
 }
+
+
 
 enum MovieError {
     

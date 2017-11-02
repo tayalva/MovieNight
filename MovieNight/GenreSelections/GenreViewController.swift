@@ -21,6 +21,8 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var genreStringArray: [String] = []
     var genreArray: [GenreID] = []
     var genreSelectionArray: [GenreID] = []
+
+ 
     
     func makeGenreArray() {
         
@@ -57,6 +59,9 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         nextButton.isEnabled = false
         nextButton.alpha = 0.3
         networkRequest()
+ 
+        
+     
         
         
         
@@ -91,6 +96,17 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
             } else { print("nope") }
         }
     }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        
+        genreSelection1G = genreSelectionArray
+        
+        
+        
+    }
+    
+    
+    
     
     
     
@@ -128,10 +144,10 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(genreStringArray[indexPath.row])
+       
         
         let cell = tableView.cellForRow(at: indexPath) as! GenreViewCell
-        print(indexPath)
+    
         
         if cell.selectionMark.image == #imageLiteral(resourceName: "EmptySelection") && maxSelection != 0 {
             
@@ -154,10 +170,23 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
             nextButton.isEnabled = false
         }
         
-        print(genreSelectionArray)
+   
     }
     
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == "ActorViewSegue" {
+            
+            let vc = segue.destination as? ActorViewController
+            
+            vc?.genreSelection = genreSelectionArray
+            
+         
+        }
+    }
     
     
 }

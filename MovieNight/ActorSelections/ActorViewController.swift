@@ -15,13 +15,15 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     var actorArray: [String] = []
     var actorSelection: [String] = []
     var maxSelection: Int = 3
+    var genreSelection: [GenreID] = []
+
     
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
+       
         networkRequest()
       
     }
@@ -45,7 +47,7 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 
                 
-                print(self.actorArray)
+    
                 
                 
                 OperationQueue.main.addOperation {
@@ -59,15 +61,26 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    
+    
+    @IBAction func nextButton(_ sender: Any) {
+        
+        
+     actorSelection1G = actorSelection
+        
+        
     }
     
+
+    
+    
+    
+    
+    
+    
     // MARK: - Table view data source
-    
-    
-    
+
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return actorArray.count
@@ -91,7 +104,7 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ActorViewCell
-        print(indexPath)
+       
         
         if cell.selectionMark.image == #imageLiteral(resourceName: "EmptySelection") && maxSelection != 0 {
             
@@ -114,19 +127,26 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
             nextButton.isEnabled = false
         }
         
-        print(actorSelection)
+       
 }
     
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "TimePeriodViewSegue" {
+            
+            let vc = segue.destination as? TimePeriodViewController
+            
+            vc?.genreSelection = genreSelection
+            vc?.actorSelection = actorSelection
+            
+
+        }
     }
-    */
+
 
 }

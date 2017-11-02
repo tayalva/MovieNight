@@ -16,6 +16,8 @@
 		A62284851F8A9A2500110EC5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284841F8A9A2500110EC5 /* NetworkManager.swift */; };
 		A62284871F8BF97100110EC5 /* Data Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284861F8BF97100110EC5 /* Data Models.swift */; };
 		A62284A91F8C22BE00110EC5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62284A81F8C22BE00110EC5 /* Movie.swift */; };
+		A63EB9B01FABB570009A4295 /* WatcherOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63EB9AF1FABB570009A4295 /* WatcherOne.swift */; };
+		A63EB9B21FABBA92009A4295 /* WatcherTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63EB9B11FABBA92009A4295 /* WatcherTwo.swift */; };
 		A697A4F41F9A5D52009E17D0 /* ActorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697A4F31F9A5D52009E17D0 /* ActorViewCell.swift */; };
 		A6ABA6B01F953F7000E51625 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6AF1F953F7000E51625 /* Actor.swift */; };
 		A6ABA6B21F954B3C00E51625 /* ActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6B11F954B3C00E51625 /* ActorViewController.swift */; };
@@ -36,6 +38,8 @@
 		A62284841F8A9A2500110EC5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A62284861F8BF97100110EC5 /* Data Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Models.swift"; sourceTree = "<group>"; };
 		A62284A81F8C22BE00110EC5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A63EB9AF1FABB570009A4295 /* WatcherOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatcherOne.swift; sourceTree = "<group>"; };
+		A63EB9B11FABBA92009A4295 /* WatcherTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatcherTwo.swift; sourceTree = "<group>"; };
 		A697A4F31F9A5D52009E17D0 /* ActorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewCell.swift; sourceTree = "<group>"; };
 		A6ABA6AF1F953F7000E51625 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		A6ABA6B11F954B3C00E51625 /* ActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewController.swift; sourceTree = "<group>"; };
@@ -78,9 +82,9 @@
 				A62284741F8A999900110EC5 /* ViewController.swift */,
 				A62284841F8A9A2500110EC5 /* NetworkManager.swift */,
 				A6C161551F956B46001F71CC /* Data Models */,
-				A6C161521F956B0A001F71CC /* TimeSelections */,
-				A6C161511F956B01001F71CC /* ActorSelections */,
 				A6C161501F956AEB001F71CC /* GenreSelections */,
+				A6C161511F956B01001F71CC /* ActorSelections */,
+				A6C161521F956B0A001F71CC /* TimeSelections */,
 				A62284761F8A999900110EC5 /* Main.storyboard */,
 				A62284791F8A999900110EC5 /* Assets.xcassets */,
 				A622847B1F8A999900110EC5 /* LaunchScreen.storyboard */,
@@ -122,6 +126,8 @@
 				A6ABA6AF1F953F7000E51625 /* Actor.swift */,
 				A62284A81F8C22BE00110EC5 /* Movie.swift */,
 				A62284861F8BF97100110EC5 /* Data Models.swift */,
+				A63EB9AF1FABB570009A4295 /* WatcherOne.swift */,
+				A63EB9B11FABBA92009A4295 /* WatcherTwo.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -207,6 +213,8 @@
 				A62284871F8BF97100110EC5 /* Data Models.swift in Sources */,
 				A6ABA6B41F955AC100E51625 /* GenreViewController.swift in Sources */,
 				A62284731F8A999900110EC5 /* AppDelegate.swift in Sources */,
+				A63EB9B21FABBA92009A4295 /* WatcherTwo.swift in Sources */,
+				A63EB9B01FABB570009A4295 /* WatcherOne.swift in Sources */,
 				A62284A91F8C22BE00110EC5 /* Movie.swift in Sources */,
 				A6ABA6B21F954B3C00E51625 /* ActorViewController.swift in Sources */,
 				A6ABA6B01F953F7000E51625 /* Actor.swift in Sources */,

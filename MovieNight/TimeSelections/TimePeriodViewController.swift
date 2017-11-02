@@ -12,7 +12,13 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var timePeriodArray: [String] = ["90's", "2000's", "2010's", "Now Playing"]
     var maxSelection = 1
+    
     var timeSelection = ""
+    var genreSelection: [GenreID] = []
+    var actorSelection: [String] = []
+    var isWatcher1: Bool = false
+    var isWatcher2: Bool = false
+    
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -24,11 +30,18 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func finishButton(_ sender: Any) {
+        
+        timePeriodSelectionG = timeSelection
+        
     }
+    
+    
+    
+
+  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timePeriodArray.count
@@ -72,14 +85,38 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "MainViewSegue" {
+            
+            let vc = segue.destination as? ViewController
+            
+            if isWatcher1G == true {
+            vc?.genreSelection = genreSelection
+            vc?.actorSelection = actorSelection
+            vc?.timeSelection = timeSelection
+            
+                
+                
+                
+            } else if isWatcher2G == true {
+                
+                vc?.genreSelection2 = genreSelection
+                vc?.actorSelection2 = actorSelection
+                vc?.timeSelection2 = timeSelection
+                
+                
+            }
+            
+            print(isWatcher1G)
+        }
+        
+        
     }
-    */
+
 
 }
