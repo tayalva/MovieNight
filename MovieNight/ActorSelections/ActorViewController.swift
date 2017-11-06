@@ -68,7 +68,7 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         
      actorSelection1G = actorSelection
-        
+
         
     }
     

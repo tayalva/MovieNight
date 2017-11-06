@@ -79,6 +79,8 @@
                     <connections>
                         <outlet property="watcherBubble1" destination="kTK-Qw-0tL" id="NKy-hi-lhz"/>
                         <outlet property="watcherBubble2" destination="vHR-iH-xsw" id="hHL-aT-rgb"/>
+                        <outlet property="watcherButton1" destination="VSc-kP-WAb" id="ECn-Bm-Xn6"/>
+                        <outlet property="watcherButton2" destination="P1L-E8-LnD" id="NNJ-dD-wyC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -185,7 +187,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aey-iR-JXw">
-                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="622" width="375" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.44638282060000001" green="0.75531333680000001" blue="0.88503533599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
@@ -198,7 +200,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick 3 Genres" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sg-0P-zNq">
-                                <rect key="frame" x="0.0" y="13" width="375" height="51"/>
+                                <rect key="frame" x="0.0" y="26" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.44638282060000001" green="0.75531333680000001" blue="0.88503533599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
@@ -351,7 +353,7 @@
                                 </state>
                                 <connections>
                                     <action selector="finishButton:" destination="k9U-TU-bcy" eventType="touchUpInside" id="tzX-iY-Uwo"/>
-                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="MainViewSegue" modalTransitionStyle="crossDissolve" id="g7E-sq-zF9"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainViewSegue" id="6co-xn-hbO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick A Release Time Period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-aE-OUM">

@@ -100,13 +100,15 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func nextButton(_ sender: Any) {
         
         genreSelection1G = genreSelectionArray
-        
+    
         
         
     }
     
     
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+    }
     
     
     

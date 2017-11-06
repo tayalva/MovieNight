@@ -15,6 +15,7 @@ class WatcherOne {
     var genreSelection: [GenreID]
     var actorSelection: [String]
     var timePeriod: String
+
     
     
     init(genre: [GenreID], actors: [String], timePeriod: String) {
@@ -23,6 +24,7 @@ class WatcherOne {
         self.genreSelection = genre
         self.actorSelection = actors
         self.timePeriod = timePeriod
+    
     }
     
     

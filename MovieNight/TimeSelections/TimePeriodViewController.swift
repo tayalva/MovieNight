@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol TimePeriodViewControllerDelegate: class {
+    
+    func genres(genres: [GenreID])
+    func actors(actors: [String])
+    func time(timePeriod: String)
+    
+}
+
 class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var timePeriodArray: [String] = ["90's", "2000's", "2010's", "Now Playing"]
@@ -19,6 +27,8 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     var isWatcher1: Bool = false
     var isWatcher2: Bool = false
     
+    weak var delegate: TimePeriodViewControllerDelegate?
+    
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -27,15 +37,31 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+ 
 
-        // Do any additional setup after loading the view.
+ 
     }
     
+// Hey Dan! This is where I'm assigning the user's selections to the delegate. This button also segues back to the main VC. I have print statements for those arrays just to make sure the info is in fact there, so I know my data is being passed. 
     
     @IBAction func finishButton(_ sender: Any) {
         
-        timePeriodSelectionG = timeSelection
+        print(genreSelection)
+        print(actorSelection)
+        print(timeSelection)
         
+        print("************************")
+        
+        
+        delegate?.genres(genres: genreSelection)
+        delegate?.actors(actors: actorSelection)
+        delegate?.time(timePeriod: timeSelection)
+        
+        let test = delegate?.time(timePeriod: "test time")
+        print(test)
+    
+       
     }
     
     
@@ -58,7 +84,6 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! TimePeriodViewCell
-        print(indexPath)
         
         if cell.selectionMark.image == #imageLiteral(resourceName: "EmptySelection") && maxSelection != 0 {
             
@@ -81,7 +106,7 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
             finishButton.isEnabled = false
         }
         
-        print(timeSelection)
+    
     }
     
 
@@ -89,7 +114,7 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "MainViewSegue" {
             
@@ -99,7 +124,7 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
             vc?.genreSelection = genreSelection
             vc?.actorSelection = actorSelection
             vc?.timeSelection = timeSelection
-            
+            vc?.isDone1 = true
                 
                 
                 
@@ -108,6 +133,7 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
                 vc?.genreSelection2 = genreSelection
                 vc?.actorSelection2 = actorSelection
                 vc?.timeSelection2 = timeSelection
+                vc?.isDone2 = true
                 
                 
             }
@@ -117,6 +143,6 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
         
         
     }
-
+*/
 
 }
