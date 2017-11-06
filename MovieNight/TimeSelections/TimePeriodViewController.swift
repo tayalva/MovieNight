@@ -10,10 +10,9 @@ import UIKit
 
 protocol TimePeriodViewControllerDelegate: class {
     
-    func genres(genres: [GenreID])
-    func actors(actors: [String])
-    func time(timePeriod: String)
+    //Streamlined the delegate method, so all data is passed at once instead of three different methods
     
+    func timePeriodViewController(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [String], time: String)
 }
 
 class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -27,7 +26,9 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     var isWatcher1: Bool = false
     var isWatcher2: Bool = false
     
-    weak var delegate: TimePeriodViewControllerDelegate?
+    
+    //Added static keyword, so you don't rely on a specific instance of the VC anymore
+    static weak var delegate: TimePeriodViewControllerDelegate?
     
     
 
@@ -47,27 +48,10 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func finishButton(_ sender: Any) {
         
-        print(genreSelection)
-        print(actorSelection)
-        print(timeSelection)
         
-        print("************************")
-        
-        
-        delegate?.genres(genres: genreSelection)
-        delegate?.actors(actors: actorSelection)
-        delegate?.time(timePeriod: timeSelection)
-        
-        let test = delegate?.time(timePeriod: "test time")
-        print(test)
-    
-       
+        //Because the delegate is now declared static you need to call it on the VC itself
+        TimePeriodViewController.delegate?.timePeriodViewController(_: self, didSelectGenres: genreSelection, actors: actorSelection, time: timeSelection)
     }
-    
-    
-    
-
-  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timePeriodArray.count
