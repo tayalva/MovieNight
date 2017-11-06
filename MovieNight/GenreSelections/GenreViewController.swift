@@ -178,18 +178,19 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
+
+
         if segue.identifier == "ActorViewSegue" {
-            
+
             let vc = segue.destination as? ActorViewController
-            
+
             vc?.genreSelection = genreSelectionArray
-            
-         
+
+
         }
     }
     
     
 }
+
 

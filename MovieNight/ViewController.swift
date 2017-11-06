@@ -11,7 +11,7 @@ import UIKit
 var isWatcher1G: Bool = false
 var isWatcher2G: Bool = false
 
-class ViewController: UIViewController, TimePeriodViewControllerDelegate {
+class ViewController: UIViewController {
 
     
     var genreSelection: [GenreID] = []
@@ -40,7 +40,8 @@ class ViewController: UIViewController, TimePeriodViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //Again, because the delegate is declared static in the TimePeriodVC, you need to assign the delegate here directly to the VC, and not to an instance.
+        TimePeriodViewController.delegate = self
       
         print("this is your time: \(timeSelection)")
        
@@ -71,16 +72,6 @@ class ViewController: UIViewController, TimePeriodViewControllerDelegate {
             
             
         }
-        
-     
-        
-        //print(watcherTwoSelections.actorSelection)
-       // print(watcherTwoSelections.genreSelection)
-        //print(watcherTwoSelections.timePeriod)
-   
-  
-        
-        
     }
     
     
@@ -94,10 +85,6 @@ class ViewController: UIViewController, TimePeriodViewControllerDelegate {
         
         isWatcher1G = true
         isWatcher2G = false
-    
-        TimePeriodViewController().delegate = self
-   
-        
     }
     
     @IBAction func watcherButton2(_ sender: Any) {
@@ -105,35 +92,19 @@ class ViewController: UIViewController, TimePeriodViewControllerDelegate {
         isWatcher2G = true
         isWatcher1G = false 
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let destination = segue.destination as? TimePeriodViewController {
-            
-            destination.delegate = self
-        }
-        
-   
-    }
-    
-    func actors(actors: [String]) {
-        print("actors!")
-        print(actors)
-        actorSelection = actors
-      
-    }
-    
-    func genres(genres: [GenreID]) {
-        
-        genreSelection = genres
-        
-    }
-    
-    func time(timePeriod: String) {
-        timeSelection = timePeriod
-    }
-    
-    
-
 }
 
+
+//Conformed to the delegate in an extension. Makes the code a little cleaner.
+extension ViewController: TimePeriodViewControllerDelegate {
+    func timePeriodViewController(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [String], time: String) {
+        
+        print(genres)
+        print(actors)
+        print(time)
+        
+        actorSelection = actors
+        genreSelection = genres
+        timeSelection = time
+    }
+}
