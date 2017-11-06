@@ -99,8 +99,7 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func nextButton(_ sender: Any) {
         
-        genreSelection1G = genreSelectionArray
-    
+        performSegue(withIdentifier: "ActorViewSegue", sender: nil)
         
         
     }
@@ -122,11 +121,13 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
- 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "genreCell", for: indexPath) as! GenreViewCell
+        
+        self.tableView?.rowHeight = 75
+        
         
         let item = genreStringArray[indexPath.row]
         let currentGenre = genreArray[indexPath.row]

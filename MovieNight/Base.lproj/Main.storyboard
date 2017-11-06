@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0zM-Xh-Q2F">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -49,7 +49,6 @@
                                 <state key="normal" backgroundImage="PersonIcon"/>
                                 <connections>
                                     <action selector="watcherButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ke2-iS-G49"/>
-                                    <segue destination="6SH-yC-WnQ" kind="presentation" identifier="GenreViewSegue" modalTransitionStyle="crossDissolve" id="2ah-SZ-jE6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watcher 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCP-FO-cYY">
@@ -69,23 +68,24 @@
                                 <state key="normal" backgroundImage="PersonIcon"/>
                                 <connections>
                                     <action selector="watcherButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PtJ-uK-WSs"/>
-                                    <segue destination="6SH-yC-WnQ" kind="presentation" identifier="GenreViewSegue" modalTransitionStyle="crossDissolve" id="jSv-Oh-WV1"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.35578557848930359" green="0.71963495016098022" blue="0.87009733915328979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MdR-0f-haL"/>
                     <connections>
                         <outlet property="watcherBubble1" destination="kTK-Qw-0tL" id="NKy-hi-lhz"/>
                         <outlet property="watcherBubble2" destination="vHR-iH-xsw" id="hHL-aT-rgb"/>
                         <outlet property="watcherButton1" destination="VSc-kP-WAb" id="ECn-Bm-Xn6"/>
                         <outlet property="watcherButton2" destination="P1L-E8-LnD" id="NNJ-dD-wyC"/>
+                        <segue destination="6SH-yC-WnQ" kind="show" identifier="GenreViewSegue" id="AqR-ov-fv1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="128.18590704647679"/>
+            <point key="canvasLocation" x="231" y="126"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="z6v-5b-NgF">
@@ -141,7 +141,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5U-yf-yjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157.59999999999999" y="806.44677661169419"/>
+            <point key="canvasLocation" x="230" y="800"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M8h-Aa-WLQ">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="0zM-Xh-Q2F" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1hS-1D-0c0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nXC-iC-bJZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eyg-gH-779" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-482" y="127"/>
         </scene>
         <!--Genre View Controller-->
         <scene sceneID="WnT-Ep-TwE">
@@ -196,7 +211,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="6SH-yC-WnQ" eventType="touchUpInside" id="cBL-iC-RPG"/>
-                                    <segue destination="jn3-VV-L83" kind="presentation" identifier="ActorViewSegue" modalTransitionStyle="crossDissolve" id="Qxe-tI-Q7N"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick 3 Genres" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sg-0P-zNq">
@@ -214,11 +228,12 @@
                     <connections>
                         <outlet property="nextButton" destination="aey-iR-JXw" id="XL5-df-dJz"/>
                         <outlet property="tableView" destination="v6N-jy-fSQ" id="0MG-Ar-MqY"/>
+                        <segue destination="jn3-VV-L83" kind="show" identifier="ActorViewSegue" id="x7S-NY-17T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gu-1p-S4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="127.28635682158921"/>
+            <point key="canvasLocation" x="938" y="125"/>
         </scene>
         <!--Actor View Controller-->
         <scene sceneID="ofP-hJ-nzK">
@@ -274,7 +289,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="jn3-VV-L83" eventType="touchUpInside" id="RYE-7k-mkm"/>
-                                    <segue destination="k9U-TU-bcy" kind="presentation" identifier="TimePeriodViewSegue" modalTransitionStyle="crossDissolve" id="QcX-3U-GSh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick 3 Popular Actors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBy-xG-Sok">
@@ -292,6 +306,7 @@
                     <connections>
                         <outlet property="nextButton" destination="9v9-a1-eSH" id="vM9-26-myh"/>
                         <outlet property="tableView" destination="MRv-oj-cmx" id="vKx-Sr-JUh"/>
+                        <segue destination="k9U-TU-bcy" kind="show" identifier="TimePeriodViewSegue" id="YtS-WY-04o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXO-Ih-CGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,7 +368,6 @@
                                 </state>
                                 <connections>
                                     <action selector="finishButton:" destination="k9U-TU-bcy" eventType="touchUpInside" id="tzX-iY-Uwo"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainViewSegue" id="6co-xn-hbO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick A Release Time Period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-aE-OUM">
@@ -371,9 +385,11 @@
                     <connections>
                         <outlet property="finishButton" destination="OdT-a5-d6Z" id="M4r-WX-91U"/>
                         <outlet property="tableView" destination="ehF-2c-VbV" id="efN-MB-Lxb"/>
+                        <segue destination="DpY-C3-JHL" kind="unwind" identifier="unwindSegueToMainVC" unwindAction="unwindToMainVCWithSegue:" id="8tR-wP-UWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXm-Pa-zQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DpY-C3-JHL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2313" y="126"/>
         </scene>
@@ -383,7 +399,4 @@
         <image name="PersonIcon" width="411" height="410"/>
         <image name="bubble-empty" width="123" height="97"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="jSv-Oh-WV1"/>
-    </inferredMetricsTieBreakers>
 </document>

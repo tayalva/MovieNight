@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var watcherButton1: UIButton!
     @IBOutlet weak var watcherButton2: UIButton!
     
-    
+    @IBAction func unwindToMainVC(segue:UIStoryboardSegue) { }
 
     
 
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         //Again, because the delegate is declared static in the TimePeriodVC, you need to assign the delegate here directly to the VC, and not to an instance.
         TimePeriodViewController.delegate = self
       
-        print("this is your time: \(timeSelection)")
+     
        
         let watcherOneSelections = WatcherOne(genre: genreSelection, actors: actorSelection, timePeriod: timeSelection)
         let watcherTwoSelections = WatcherTwo(genre: genreSelection2, actors: actorSelection2, timePeriod: timeSelection2)
@@ -85,12 +85,15 @@ class ViewController: UIViewController {
         
         isWatcher1G = true
         isWatcher2G = false
+        
+        performSegue(withIdentifier: "GenreViewSegue", sender: nil)
     }
     
     @IBAction func watcherButton2(_ sender: Any) {
         
         isWatcher2G = true
-        isWatcher1G = false 
+        isWatcher1G = false
+         performSegue(withIdentifier: "GenreViewSegue", sender: nil)
     }
 }
 
@@ -98,7 +101,6 @@ class ViewController: UIViewController {
 //Conformed to the delegate in an extension. Makes the code a little cleaner.
 extension ViewController: TimePeriodViewControllerDelegate {
     func timePeriodViewController(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [String], time: String) {
-        
         print(genres)
         print(actors)
         print(time)

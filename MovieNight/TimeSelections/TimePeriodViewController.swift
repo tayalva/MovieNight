@@ -44,13 +44,13 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
  
     }
     
-// Hey Dan! This is where I'm assigning the user's selections to the delegate. This button also segues back to the main VC. I have print statements for those arrays just to make sure the info is in fact there, so I know my data is being passed. 
     
     @IBAction func finishButton(_ sender: Any) {
-        
-        
+
         //Because the delegate is now declared static you need to call it on the VC itself
         TimePeriodViewController.delegate?.timePeriodViewController(_: self, didSelectGenres: genreSelection, actors: actorSelection, time: timeSelection)
+        
+      performSegue(withIdentifier: "unwindSegueToMainVC", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +59,7 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
-        
+         self.tableView?.rowHeight = 75
         cell.textLabel?.text = timePeriodArray[indexPath.row]
         
         return cell
@@ -68,7 +68,7 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! TimePeriodViewCell
-        
+       
         if cell.selectionMark.image == #imageLiteral(resourceName: "EmptySelection") && maxSelection != 0 {
             
             cell.selectionMark.image = #imageLiteral(resourceName: "SelectedCircle")

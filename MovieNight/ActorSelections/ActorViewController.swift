@@ -67,8 +67,8 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBAction func nextButton(_ sender: Any) {
         
         
-     actorSelection1G = actorSelection
 
+        performSegue(withIdentifier: "TimePeriodViewSegue", sender: nil)
         
     }
     
@@ -89,7 +89,7 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "actorCell", for: indexPath) as! ActorViewCell
-        
+         self.tableView?.rowHeight = 75
         let item = actorArray[indexPath.row]
         
         cell.textLabel?.text = item
