@@ -21,6 +21,7 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var genreStringArray: [String] = []
     var genreArray: [GenreID] = []
     var genreSelectionArray: [GenreID] = []
+    var isWatcher1: Bool = false
 
  
     
@@ -60,6 +61,7 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         nextButton.alpha = 0.3
         networkRequest()
  
+     
         
      
         
@@ -186,6 +188,7 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let vc = segue.destination as? ActorViewController
 
             vc?.genreSelection = genreSelectionArray
+            vc?.isWatcher1 = isWatcher1
 
 
         }

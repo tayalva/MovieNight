@@ -16,6 +16,7 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     var actorSelection: [String] = []
     var maxSelection: Int = 3
     var genreSelection: [GenreID] = []
+    var isWatcher1: Bool = false 
 
     
     @IBOutlet weak var nextButton: UIButton!
@@ -143,6 +144,7 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             vc?.genreSelection = genreSelection
             vc?.actorSelection = actorSelection
+            vc?.isWatcher1 = isWatcher1
             
 
         }

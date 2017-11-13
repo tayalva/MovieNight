@@ -12,7 +12,7 @@ protocol TimePeriodViewControllerDelegate: class {
     
     //Streamlined the delegate method, so all data is passed at once instead of three different methods
     
-    func timePeriodViewController(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [String], time: String)
+    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [String], time: String, isWatcherOne: Bool)
 }
 
 class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -48,7 +48,9 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBAction func finishButton(_ sender: Any) {
 
         //Because the delegate is now declared static you need to call it on the VC itself
-        TimePeriodViewController.delegate?.timePeriodViewController(_: self, didSelectGenres: genreSelection, actors: actorSelection, time: timeSelection)
+        TimePeriodViewController.delegate?.watcherSelections(_: self, didSelectGenres: genreSelection, actors: actorSelection, time: timeSelection, isWatcherOne: isWatcher1)
+        
+     
         
       performSegue(withIdentifier: "unwindSegueToMainVC", sender: self)
     }
