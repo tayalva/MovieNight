@@ -19,6 +19,7 @@ struct ActorResults: Codable {
 struct Actor: Codable {
     
     var name: String
+    var id: Int
     var popularity: Double
     
 }

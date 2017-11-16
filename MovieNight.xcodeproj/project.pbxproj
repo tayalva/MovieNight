@@ -19,6 +19,7 @@
 		A63EB9B01FABB570009A4295 /* WatcherOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63EB9AF1FABB570009A4295 /* WatcherOne.swift */; };
 		A63EB9B21FABBA92009A4295 /* WatcherTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63EB9B11FABBA92009A4295 /* WatcherTwo.swift */; };
 		A6832E581FB4BEE500E01356 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6832E571FB4BEE500E01356 /* ResultsViewController.swift */; };
+		A6832E5A1FBA5D8800E01356 /* ResultsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6832E591FBA5D8800E01356 /* ResultsViewCell.swift */; };
 		A697A4F41F9A5D52009E17D0 /* ActorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697A4F31F9A5D52009E17D0 /* ActorViewCell.swift */; };
 		A6ABA6B01F953F7000E51625 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6AF1F953F7000E51625 /* Actor.swift */; };
 		A6ABA6B21F954B3C00E51625 /* ActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABA6B11F954B3C00E51625 /* ActorViewController.swift */; };
@@ -42,6 +43,7 @@
 		A63EB9AF1FABB570009A4295 /* WatcherOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatcherOne.swift; sourceTree = "<group>"; };
 		A63EB9B11FABBA92009A4295 /* WatcherTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatcherTwo.swift; sourceTree = "<group>"; };
 		A6832E571FB4BEE500E01356 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		A6832E591FBA5D8800E01356 /* ResultsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewCell.swift; sourceTree = "<group>"; };
 		A697A4F31F9A5D52009E17D0 /* ActorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewCell.swift; sourceTree = "<group>"; };
 		A6ABA6AF1F953F7000E51625 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		A6ABA6B11F954B3C00E51625 /* ActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				A6C161511F956B01001F71CC /* ActorSelections */,
 				A6C161521F956B0A001F71CC /* TimeSelections */,
 				A6832E571FB4BEE500E01356 /* ResultsViewController.swift */,
+				A6832E591FBA5D8800E01356 /* ResultsViewCell.swift */,
 				A62284761F8A999900110EC5 /* Main.storyboard */,
 				A62284791F8A999900110EC5 /* Assets.xcassets */,
 				A622847B1F8A999900110EC5 /* LaunchScreen.storyboard */,
@@ -220,6 +223,7 @@
 				A63EB9B21FABBA92009A4295 /* WatcherTwo.swift in Sources */,
 				A63EB9B01FABB570009A4295 /* WatcherOne.swift in Sources */,
 				A62284A91F8C22BE00110EC5 /* Movie.swift in Sources */,
+				A6832E5A1FBA5D8800E01356 /* ResultsViewCell.swift in Sources */,
 				A6ABA6B21F954B3C00E51625 /* ActorViewController.swift in Sources */,
 				A6ABA6B01F953F7000E51625 /* Actor.swift in Sources */,
 			);

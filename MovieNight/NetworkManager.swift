@@ -7,7 +7,7 @@
 //
 
 import Foundation
-var genreSelected: GenreID = .Animation
+var genreSelected: GenreID = .Comedy
 
 class NetworkManager {
     
@@ -19,7 +19,7 @@ class NetworkManager {
     func fetchGenre(completion: @escaping ([Movie]?, MovieError?)-> Void) {
         
         
-        let url = "\(baseURL)genre/\(genreSelected.rawValue)/movies?\(apiKey)&sort_by=created_at.asc"
+        let url = "\(baseURL)genre/35/movies?\(apiKey)&sort_by=created_at.asc"
 
         let apiUrl = URL(string: url)!
         
@@ -68,7 +68,7 @@ class NetworkManager {
             
             let decoder = JSONDecoder()
             if let actorArray = try? decoder.decode(ActorResults.self, from: responseData){
-                
+                print(actorArray)
                 completion(actorArray.results, nil)
                 
                 

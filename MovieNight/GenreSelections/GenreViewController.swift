@@ -49,55 +49,16 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+    
         navigationController?.navigationBar.barTintColor = UIColor(red: 91/255.0, green: 184/255.0, blue: 222/255.0, alpha: 1)
         nextButton.isEnabled = false
         nextButton.alpha = 0.3
-        networkRequest()
- 
-     
-        
-     
-        
-        
+        makeGenreArray()
+
         
     }
     
-    let networkCall = NetworkManager()
-    
-    func networkRequest() {
-        
-        networkCall.fetchGenre { (fetchedInfo, error) in
-            
-            
-            if let fetchedInfo = fetchedInfo {
-                
-                let movie = fetchedInfo
-                
-                for movie in movie {
-                    
-                    self.movieArray.append(movie.title)
-                }
-                
-            
-                self.makeGenreArray()
-                
-                OperationQueue.main.addOperation {
-                    
-                    self.tableView.reloadData()
-                    
-                }
-                
-                
-            } else { print("nope") }
-        }
-    }
+
     
     @IBAction func nextButton(_ sender: Any) {
         

@@ -12,7 +12,7 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    var actorArray: [String] = []
+    var actorArray: [String : Int] = [:]
     var actorSelection: [String] = []
     var maxSelection: Int = 3
     var genreSelection: [GenreID] = []
@@ -24,7 +24,6 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
     
-       
         networkRequest()
       
     }
@@ -41,14 +40,12 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 let actor = fetchedInfo
                 
+                
+                
                 for actor in actor {
                     
-                    self.actorArray.append(actor.name)
+                    self.actorArray[actor.name] = actor.id
                 }
-                
-                
-                
-    
                 
                 
                 OperationQueue.main.addOperation {
@@ -91,6 +88,8 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "actorCell", for: indexPath) as! ActorViewCell
          self.tableView?.rowHeight = 75
+        
+        // this was before i chagned actorArray to a dictionary, so i need to fix this somehow
         let item = actorArray[indexPath.row]
         
         cell.textLabel?.text = item

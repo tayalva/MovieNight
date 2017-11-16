@@ -23,8 +23,8 @@ class ViewController: UIViewController {
     
     var isWatcher1: Bool = false
     var isWatcher2: Bool = false
-
     var willReset: Bool = false
+    
     
     @IBOutlet weak var watcherBubble1: UIImageView!
     @IBOutlet weak var watcherBubble2: UIImageView!
