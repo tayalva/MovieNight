@@ -12,8 +12,8 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    var actorArray: [String : Int] = [:]
-    var actorSelection: [String] = []
+    var actorArray: [Actor] = []
+    var actorSelection: [Actor] = []
     var maxSelection: Int = 3
     var genreSelection: [GenreID] = []
     var isWatcher1: Bool = false 
@@ -38,15 +38,8 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             if let fetchedInfo = fetchedInfo {
                 
-                let actor = fetchedInfo
-                
-                
-                
-                for actor in actor {
-                    
-                    self.actorArray[actor.name] = actor.id
-                }
-                
+                self.actorArray = fetchedInfo
+
                 
                 OperationQueue.main.addOperation {
                     
@@ -89,10 +82,10 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "actorCell", for: indexPath) as! ActorViewCell
          self.tableView?.rowHeight = 75
         
-        // this was before i chagned actorArray to a dictionary, so i need to fix this somehow
+      
         let item = actorArray[indexPath.row]
         
-        cell.textLabel?.text = item
+        cell.textLabel?.text = item.name
         
         if actorSelection.contains(item) {
             
