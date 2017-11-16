@@ -10,8 +10,7 @@ import Foundation
 
 struct Results: Codable {
     
-    var id: Int
-    var page: Int
+
     var results: [Movie]
     
 }

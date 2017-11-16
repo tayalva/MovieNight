@@ -12,13 +12,11 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     var genreSelection: [GenreID] = []
-    var actorSelection: [String] = []
+    var actorSelection: [Actor] = []
     var timeSelection: String = ""
-    var genreSelection2: [GenreID] = []
-    var actorSelection2: [String] = []
-    var timeSelection2: String = ""
+
     
-    var movieResults: [String] = []
+    var movieResults: [Movie] = []
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,14 +29,12 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
   networkRequest()
      
        let watcherOne = WatcherOne(genre: genreSelection, actors: actorSelection, timePeriod: timeSelection)
-       let watcherTwo = WatcherTwo(genre: genreSelection2, actors: actorSelection2, timePeriod: timeSelection2)
+
       
         print(watcherOne.actorSelection)
         print(watcherOne.genreSelection)
         print(watcherOne.timePeriod)
-        print(watcherTwo.actorSelection)
-        print(watcherTwo.genreSelection)
-        print(watcherTwo.timePeriod)
+
 
     }
     
@@ -54,20 +50,13 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func networkRequest() {
         
-        networkCall.fetchGenre { (fetchedInfo, error) in
+        networkCall.fetchMovies(genres: genreSelection, actors: actorSelection) { (fetchedInfo, error) in
             
             
             if let fetchedInfo = fetchedInfo {
                 
-                let genre = fetchedInfo
+                self.movieResults = fetchedInfo
                 
-                
-                for movie in genre {
-                    
-                    self.movieResults.append(movie.title)
-                }
-                
-                print(self.movieResults)
                 
                 OperationQueue.main.addOperation {
                     
@@ -92,7 +81,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView?.rowHeight = 75
         let item = movieResults[indexPath.row]
         
-        cell.textLabel?.text = item
+        cell.textLabel?.text = item.title
         
         return cell
     }

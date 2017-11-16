@@ -68,7 +68,7 @@ class NetworkManager {
             
             let decoder = JSONDecoder()
             if let actorArray = try? decoder.decode(ActorResults.self, from: responseData){
-                print(actorArray)
+             
                 completion(actorArray.results, nil)
                 
                 
@@ -81,9 +81,50 @@ class NetworkManager {
             
             } .resume()
     
-    
-    
     }
+    
+ ///////////////////////////////////////////////////////
+    
+    
+    func fetchMovies(genres: [GenreID], actors: [Actor], completion: @escaping ([Movie]?, MovieError?)-> Void) {
+        
+        
+        
+
+        
+        let url = "\(baseURL)discover/movie?\(apiKey)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_cast=\(actors[0].id)%7C\(actors[1].id)%7C\(actors[2].id)%7C\(actors[3].id)%7C\(actors[4].id)%7C\(actors[5].id)&with_genres=\(genres[0].rawValue)%7C\(genres[1].rawValue)%7C\(genres[2].rawValue)%7C\(genres[3].rawValue)%7C\(genres[4].rawValue)%7C\(genres[5].rawValue)"
+        
+        
+        print(url)
+        let apiUrl = URL(string: url)!
+        
+        URLSession.shared.dataTask(with: apiUrl) {
+            (data, response, error) in
+            
+            guard let responseData = data else {
+                print("no data!")
+                completion(nil, .invalidData)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            if let movieArray = try? decoder.decode(Results.self, from: responseData){
+                
+                completion(movieArray.results, nil)
+                
+                
+            } else {
+                
+                print("not decoded properly")
+            }
+            
+            
+            
+            } .resume()
+        
+    }
+    
+    
     
     
     

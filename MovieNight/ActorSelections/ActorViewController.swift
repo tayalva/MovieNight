@@ -81,13 +81,12 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "actorCell", for: indexPath) as! ActorViewCell
          self.tableView?.rowHeight = 75
-        
-      
+
         let item = actorArray[indexPath.row]
         
         cell.textLabel?.text = item.name
         
-        if actorSelection.contains(item) {
+        if actorSelection.contains(item){
             
             cell.selectionMark.image = #imageLiteral(resourceName: "SelectedCircle")
         } else { cell.selectionMark.image = #imageLiteral(resourceName: "EmptySelection") }

@@ -15,11 +15,9 @@ class ViewController: UIViewController {
 
     
     var genreSelection: [GenreID] = []
-    var actorSelection: [String] = []
+    var actorSelection: [Actor] = []
     var timeSelection: String = ""
-    var genreSelection2: [GenreID] = []
-    var actorSelection2: [String] = []
-    var timeSelection2: String = ""
+
     
     var isWatcher1: Bool = false
     var isWatcher2: Bool = false
@@ -87,9 +85,7 @@ class ViewController: UIViewController {
             vc?.actorSelection = actorSelection
             vc?.genreSelection = genreSelection
             vc?.timeSelection = timeSelection
-            vc?.actorSelection2 = actorSelection2
-            vc?.genreSelection2 = genreSelection2
-            vc?.timeSelection2 = timeSelection2
+   
         }
     }
     
@@ -108,9 +104,7 @@ class ViewController: UIViewController {
         genreSelection = []
         actorSelection = []
         timeSelection = ""
-        genreSelection2 = []
-        actorSelection2 = []
-        timeSelection2 = ""
+  
         
         
         print("I have been reset!")
@@ -124,7 +118,7 @@ class ViewController: UIViewController {
 
 //Conformed to the delegate in an extension. Makes the code a little cleaner.
 extension ViewController: TimePeriodViewControllerDelegate {
-    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [String], time: String, isWatcherOne: Bool) {
+    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [Actor], time: String, isWatcherOne: Bool) {
    
       
         isWatcher1 = isWatcherOne
@@ -132,23 +126,21 @@ extension ViewController: TimePeriodViewControllerDelegate {
         
         if isWatcherOne {
             
-            actorSelection = actors
-            genreSelection = genres
-            timeSelection = time
+          
             watcherBubble1.image = #imageLiteral(resourceName: "bubble-selected")
             watcherButton1.isEnabled = false
-           
-   
-      
+
             
         } else {
-            
-            actorSelection2 = actors
-            genreSelection2 = genres
-            timeSelection2 = time
+        
             watcherBubble2.image = #imageLiteral(resourceName: "bubble-selected")
             watcherButton2.isEnabled = false
         }
+        
+        actorSelection.append(contentsOf: actors)
+        genreSelection.append(contentsOf: genres)
+       // actorSelection.noDuplicates()
+        //genreSelection.noDuplicates()
         
     }
 }

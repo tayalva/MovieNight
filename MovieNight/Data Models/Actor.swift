@@ -23,3 +23,15 @@ struct Actor: Codable {
     var popularity: Double
     
 }
+
+extension Actor: Equatable {
+    
+    static func == (lhs: Actor, rhs: Actor) -> Bool {
+        
+        return lhs.name == rhs.name && lhs.id == rhs.id && lhs.popularity == rhs.popularity
+        
+    }
+    
+    
+    
+}

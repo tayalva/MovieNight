@@ -12,7 +12,7 @@ protocol TimePeriodViewControllerDelegate: class {
     
     //Streamlined the delegate method, so all data is passed at once instead of three different methods
     
-    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [String], time: String, isWatcherOne: Bool)
+    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [Actor], time: String, isWatcherOne: Bool)
 }
 
 class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -22,7 +22,7 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var timeSelection = ""
     var genreSelection: [GenreID] = []
-    var actorSelection: [String] = []
+    var actorSelection: [Actor] = []
     var isWatcher1: Bool = false
     var isWatcher2: Bool = false
     

@@ -13,11 +13,11 @@ import Foundation
 class WatcherTwo {
     
     var genreSelection: [GenreID]
-    var actorSelection: [String]
+    var actorSelection: [Actor]
     var timePeriod: String
     
     
-    init(genre: [GenreID], actors: [String], timePeriod: String) {
+    init(genre: [GenreID], actors: [Actor], timePeriod: String) {
         
         
         self.genreSelection = genre
