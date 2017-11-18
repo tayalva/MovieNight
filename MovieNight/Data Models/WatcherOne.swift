@@ -14,11 +14,11 @@ class WatcherOne {
     
     var genreSelection: [GenreID]
     var actorSelection: [Actor]
-    var timePeriod: String
+    var timePeriod: [ReleaseYear]
 
     
     
-    init(genre: [GenreID], actors: [Actor], timePeriod: String) {
+    init(genre: [GenreID], actors: [Actor], timePeriod: [ReleaseYear]) {
         
         
         self.genreSelection = genre

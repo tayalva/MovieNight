@@ -13,7 +13,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var genreSelection: [GenreID] = []
     var actorSelection: [Actor] = []
-    var timeSelection: String = ""
+    var timeSelection: [ReleaseYear] = []
 
     
     var movieResults: [Movie] = []
@@ -50,7 +50,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func networkRequest() {
         
-        networkCall.fetchMovies(genres: genreSelection, actors: actorSelection) { (fetchedInfo, error) in
+        networkCall.fetchMovies(genres: genreSelection, actors: actorSelection, release: timeSelection) { (fetchedInfo, error) in
             
             
             if let fetchedInfo = fetchedInfo {

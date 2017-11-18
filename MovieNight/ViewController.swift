@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var genreSelection: [GenreID] = []
     var actorSelection: [Actor] = []
-    var timeSelection: String = ""
+    var timeSelection: [ReleaseYear] = []
 
     
     var isWatcher1: Bool = false
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
         
         genreSelection = []
         actorSelection = []
-        timeSelection = ""
+        timeSelection = []
   
         
         
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
 
 //Conformed to the delegate in an extension. Makes the code a little cleaner.
 extension ViewController: TimePeriodViewControllerDelegate {
-    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [Actor], time: String, isWatcherOne: Bool) {
+    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [Actor], time: [ReleaseYear], isWatcherOne: Bool) {
    
       
         isWatcher1 = isWatcherOne
@@ -139,8 +139,12 @@ extension ViewController: TimePeriodViewControllerDelegate {
         
         actorSelection.append(contentsOf: actors)
         genreSelection.append(contentsOf: genres)
-       // actorSelection.noDuplicates()
-        //genreSelection.noDuplicates()
+        timeSelection.append(contentsOf: time)
+        
+        print(actorSelection)
+        print(genreSelection)
+        print(timeSelection)
+ 
         
     }
 }

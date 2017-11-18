@@ -12,15 +12,15 @@ protocol TimePeriodViewControllerDelegate: class {
     
     //Streamlined the delegate method, so all data is passed at once instead of three different methods
     
-    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [Actor], time: String, isWatcherOne: Bool)
+    func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [Actor], time: [ReleaseYear], isWatcherOne: Bool)
 }
 
 class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var timePeriodArray: [String] = ["90's", "2000's", "2010's", "Now Playing"]
+    var timePeriodArray: [ReleaseYear] = [.Seventeen, .Sixteen, .Fifteen, .Fourteen, .Thirteen, .Twelve, .Eleven, .Ten, .Nine, .Eight, .Seven]
     var maxSelection = 1
     
-    var timeSelection = ""
+    var timeSelection: [ReleaseYear] = []
     var genreSelection: [GenreID] = []
     var actorSelection: [Actor] = []
     var isWatcher1: Bool = false
@@ -62,7 +62,7 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
          self.tableView?.rowHeight = 75
-        cell.textLabel?.text = timePeriodArray[indexPath.row]
+        cell.textLabel?.text = "\(timePeriodArray[indexPath.row].rawValue)"
         
         return cell
         
@@ -75,13 +75,13 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
             
             cell.selectionMark.image = #imageLiteral(resourceName: "SelectedCircle")
             maxSelection -= 1
-            timeSelection = timePeriodArray[indexPath.row]
+            timeSelection = [timePeriodArray[indexPath.row]]
             
         } else if cell.selectionMark.image == #imageLiteral(resourceName: "SelectedCircle") {
             
             cell.selectionMark.image = #imageLiteral(resourceName: "EmptySelection")
             maxSelection += 1
-            timeSelection = ""
+            timeSelection = []
         }
         
         if maxSelection == 0 {

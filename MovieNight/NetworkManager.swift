@@ -86,13 +86,13 @@ class NetworkManager {
  ///////////////////////////////////////////////////////
     
     
-    func fetchMovies(genres: [GenreID], actors: [Actor], completion: @escaping ([Movie]?, MovieError?)-> Void) {
+    func fetchMovies(genres: [GenreID], actors: [Actor], release: [ReleaseYear], completion: @escaping ([Movie]?, MovieError?)-> Void) {
         
         
         
 
         
-        let url = "\(baseURL)discover/movie?\(apiKey)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_cast=\(actors[0].id)%7C\(actors[1].id)%7C\(actors[2].id)%7C\(actors[3].id)%7C\(actors[4].id)%7C\(actors[5].id)&with_genres=\(genres[0].rawValue)%7C\(genres[1].rawValue)%7C\(genres[2].rawValue)%7C\(genres[3].rawValue)%7C\(genres[4].rawValue)%7C\(genres[5].rawValue)"
+        let url = "\(baseURL)discover/movie?\(apiKey)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_cast=\(actors[0].id)%7C\(actors[1].id)%7C\(actors[2].id)%7C\(actors[3].id)%7C\(actors[4].id)%7C\(actors[5].id)&with_genres=\(genres[0].rawValue)%7C\(genres[1].rawValue)%7C\(genres[2].rawValue)%7C\(genres[3].rawValue)%7C\(genres[4].rawValue)%7C\(genres[5].rawValue)&year=\(release[0].rawValue)%7C\(release[1].rawValue)"
         
         
         print(url)

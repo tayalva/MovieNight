@@ -43,6 +43,24 @@ enum GenreID: Int {
     
 }
 
+enum ReleaseYear: Int {
+    
+    case Seventeen = 2017
+    case Sixteen = 2016
+    case Fifteen = 2015
+    case Fourteen = 2014
+    case Thirteen = 2013
+    case Twelve = 2012
+    case Eleven = 2011
+    case Ten = 2010
+    case Nine = 2009
+    case Eight = 2008
+    case Seven = 2007
+    
+    static let allValues = [Seventeen, Sixteen, Fifteen, Fourteen, Thirteen, Twelve, Eleven, Ten, Nine, Eight, Seven]
+    
+}
+
 
 extension Array where Element: Equatable {
     
