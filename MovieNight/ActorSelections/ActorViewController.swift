@@ -48,7 +48,11 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
                 
                 
-            } else { print("nope") }
+            } else {
+                
+                   self.displayAlert("Whoops! Looks like the interwebs aren't there!", andMessage: "Check your netowrk settings and try starting over!")
+                
+                }
         }
     }
     
@@ -64,7 +68,20 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
 
-    
+    func displayAlert(_ title: String, andMessage message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            
+            self.performSegue(withIdentifier: "unwindSegueToMainVC", sender: self)
+          
+            
+        })
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     
     
@@ -138,6 +155,12 @@ class ActorViewController: UIViewController, UITableViewDataSource, UITableViewD
             vc?.isWatcher1 = isWatcher1
             
 
+        }
+        
+        if segue.identifier == "unwindSegueToMainVC" {
+            
+            let vc = segue.destination as? ViewController
+            vc?.reset()
         }
     }
 

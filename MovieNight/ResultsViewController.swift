@@ -65,7 +65,11 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 
                 
-            } else { print("nope") }
+            } else {
+                
+                self.displayAlert("Whoops! Looks like the interwebs aren't there!", andMessage: "Check your netowrk settings and try starting over!") 
+                
+            }
         }
     }
     
@@ -85,6 +89,25 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
+    
+    
+    func displayAlert(_ title: String, andMessage message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            
+          self.dismiss(animated: true, completion: nil)
+            
+        })
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    
     
     
     // MARK: - Navigation

@@ -141,9 +141,7 @@ extension ViewController: TimePeriodViewControllerDelegate {
         genreSelection.append(contentsOf: genres)
         timeSelection.append(contentsOf: time)
         
-        print(actorSelection)
-        print(genreSelection)
-        print(timeSelection)
+    
  
         
     }

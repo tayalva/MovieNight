@@ -7,7 +7,8 @@
 //
 
 import Foundation
-var genreSelected: GenreID = .Comedy
+import UIKit
+
 
 class NetworkManager {
     
@@ -69,6 +70,7 @@ class NetworkManager {
             let decoder = JSONDecoder()
             if let actorArray = try? decoder.decode(ActorResults.self, from: responseData){
              
+                print(actorArray.results)
                 completion(actorArray.results, nil)
                 
                 
@@ -101,6 +103,13 @@ class NetworkManager {
         URLSession.shared.dataTask(with: apiUrl) {
             (data, response, error) in
             
+            guard let response = response else {
+                
+                print("network error!")
+                completion(nil, .invalidData)
+                return
+            }
+            
             guard let responseData = data else {
                 print("no data!")
                 completion(nil, .invalidData)
@@ -126,8 +135,7 @@ class NetworkManager {
     
     
     
-    
-    
+
     
     
 }
