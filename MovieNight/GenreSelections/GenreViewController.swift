@@ -24,6 +24,7 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var isWatcher1: Bool = false
 
  
+// this method fixes any grammatical errors/spacing and creates the genre array that is used to populate the table view
     
     func makeGenreArray() {
         
@@ -66,12 +67,6 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
     }
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        
-    }
-    
     
     
     // MARK: - Table view data source
@@ -138,8 +133,8 @@ class GenreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
    
     }
-    
-    
+
+// passes info to the next view controller 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 

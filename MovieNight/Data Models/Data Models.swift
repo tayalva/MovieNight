@@ -61,6 +61,7 @@ enum ReleaseYear: Int {
     
 }
 
+// in case I needed to filter out duplicate entries
 
 extension Array where Element: Equatable {
     

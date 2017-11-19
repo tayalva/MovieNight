@@ -16,7 +16,10 @@ class NetworkManager {
     
     var baseURL = "https://api.themoviedb.org/3/"
     var apiKey = "api_key=cebcb7dc1f5b92102583ddea8808df00"
-  
+    
+    
+// network request to fetch genre's. I don't actually use this, as I made an enum of set genre's from the API. but I left here just in case i needed to call it
+    
     func fetchGenre(completion: @escaping ([Movie]?, MovieError?)-> Void) {
         
         
@@ -43,13 +46,12 @@ class NetworkManager {
                 
                 print("not decoded properly")
             }
-            
-         
-            
+
         } .resume()
     }
     
 ////////////////////////////////////////////////////////////
+  // network call to fetch the most popular actors
     
     func fetchActor(completion: @escaping ([Actor]?, MovieError?)-> Void) {
         
@@ -70,7 +72,6 @@ class NetworkManager {
             let decoder = JSONDecoder()
             if let actorArray = try? decoder.decode(ActorResults.self, from: responseData){
              
-                print(actorArray.results)
                 completion(actorArray.results, nil)
                 
                 
@@ -86,7 +87,7 @@ class NetworkManager {
     }
     
  ///////////////////////////////////////////////////////
-    
+//this is the final endpoint/network call that accepts the users preferences 
     
     func fetchMovies(genres: [GenreID], actors: [Actor], release: [ReleaseYear], completion: @escaping ([Movie]?, MovieError?)-> Void) {
         

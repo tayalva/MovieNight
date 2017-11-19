@@ -108,6 +108,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MdR-0f-haL"/>
                     <connections>
+                        <outlet property="resultsButton" destination="NgZ-CQ-95m" id="wPN-kU-s3B"/>
                         <outlet property="watcherBubble1" destination="kTK-Qw-0tL" id="NKy-hi-lhz"/>
                         <outlet property="watcherBubble2" destination="vHR-iH-xsw" id="hHL-aT-rgb"/>
                         <outlet property="watcherButton1" destination="VSc-kP-WAb" id="ECn-Bm-Xn6"/>

@@ -9,6 +9,7 @@
 import Foundation
 
 
+//I originally had WatcherOne and WatcherTwo, but then realized I didn't need 2 objects, and just combined both users selections into 1 object, which is used to display the final set of movies. Instead of changing WatcherOne to something like Watcher, I left it as WatcherOne
 
 class WatcherOne {
     

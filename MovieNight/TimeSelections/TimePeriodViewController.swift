@@ -8,9 +8,11 @@
 
 import UIKit
 
+// delegate method that sends final info back to the main VC
+
 protocol TimePeriodViewControllerDelegate: class {
     
-    //Streamlined the delegate method, so all data is passed at once instead of three different methods
+    
     
     func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [Actor], time: [ReleaseYear], isWatcherOne: Bool)
 }
@@ -25,35 +27,25 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     var actorSelection: [Actor] = []
     var isWatcher1: Bool = false
     var isWatcher2: Bool = false
-    
-    
-    //Added static keyword, so you don't rely on a specific instance of the VC anymore
-    static weak var delegate: TimePeriodViewControllerDelegate?
-    
-    
 
+    static weak var delegate: TimePeriodViewControllerDelegate?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var finishButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
- 
 
- 
     }
     
     
     @IBAction func finishButton(_ sender: Any) {
 
-        //Because the delegate is now declared static you need to call it on the VC itself
         TimePeriodViewController.delegate?.watcherSelections(_: self, didSelectGenres: genreSelection, actors: actorSelection, time: timeSelection, isWatcherOne: isWatcher1)
-        
-     
-        
-      performSegue(withIdentifier: "unwindSegueToMainVC", sender: self)
+        performSegue(withIdentifier: "unwindSegueToMainVC", sender: self)
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timePeriodArray.count
@@ -95,40 +87,5 @@ class TimePeriodViewController: UIViewController, UITableViewDelegate, UITableVi
     
     }
     
-
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "MainViewSegue" {
-            
-            let vc = segue.destination as? ViewController
-            
-            if isWatcher1G == true {
-            vc?.genreSelection = genreSelection
-            vc?.actorSelection = actorSelection
-            vc?.timeSelection = timeSelection
-            vc?.isDone1 = true
-                
-                
-                
-            } else if isWatcher2G == true {
-                
-                vc?.genreSelection2 = genreSelection
-                vc?.actorSelection2 = actorSelection
-                vc?.timeSelection2 = timeSelection
-                vc?.isDone2 = true
-                
-                
-            }
-            
-            print(isWatcher1G)
-        }
-        
-        
-    }
-*/
 
 }

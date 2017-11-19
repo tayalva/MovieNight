@@ -8,8 +8,6 @@
 
 import UIKit
 
-var isWatcher1G: Bool = false
-var isWatcher2G: Bool = false
 
 class ViewController: UIViewController {
 
@@ -17,7 +15,6 @@ class ViewController: UIViewController {
     var genreSelection: [GenreID] = []
     var actorSelection: [Actor] = []
     var timeSelection: [ReleaseYear] = []
-
     
     var isWatcher1: Bool = false
     var isWatcher2: Bool = false
@@ -28,7 +25,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var watcherBubble2: UIImageView!
     @IBOutlet weak var watcherButton1: UIButton!
     @IBOutlet weak var watcherButton2: UIButton!
+    @IBOutlet weak var resultsButton: UIButton!
     
+    
+  //unwind segue
     @IBAction func unwindToMainVC(segue:UIStoryboardSegue) { }
 
     
@@ -36,12 +36,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Again, because the delegate is declared static in the TimePeriodVC, you need to assign the delegate here directly to the VC, and not to an instance.
+        reset()
         TimePeriodViewController.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if watcherBubble1.image == #imageLiteral(resourceName: "bubble-selected") && watcherBubble2.image == #imageLiteral(resourceName: "bubble-selected") {
+            
+            resultsButton.isEnabled = true
+            resultsButton.alpha = 1
+        }
+        
+// calls the reset method which resets all values to 0
+        
         if willReset == true {
             
             reset()
@@ -88,6 +96,7 @@ class ViewController: UIViewController {
    
         }
     }
+// reset function that resets all values to 0
     
     func reset() {
         
@@ -99,7 +108,8 @@ class ViewController: UIViewController {
         
         watcherButton1.isEnabled = true
         watcherButton2.isEnabled = true
-        
+        resultsButton.isEnabled = false
+        resultsButton.alpha = 0.3
         
         genreSelection = []
         actorSelection = []
@@ -116,7 +126,8 @@ class ViewController: UIViewController {
 }
 
 
-//Conformed to the delegate in an extension. Makes the code a little cleaner.
+// delegate conformation to pass data back to the main vc after selections have been made
+
 extension ViewController: TimePeriodViewControllerDelegate {
     func watcherSelections(_: TimePeriodViewController, didSelectGenres genres: [GenreID], actors: [Actor], time: [ReleaseYear], isWatcherOne: Bool) {
    

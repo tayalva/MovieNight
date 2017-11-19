@@ -9,7 +9,7 @@
 import UIKit
 
 class GenreViewCell: UITableViewCell {
-
+// allows me to add a custom image
     @IBOutlet weak var selectionMark: UIImageView!
     
     

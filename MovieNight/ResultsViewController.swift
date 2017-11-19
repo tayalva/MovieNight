@@ -26,11 +26,11 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         
-  networkRequest()
+        networkRequest()
      
        let watcherOne = WatcherOne(genre: genreSelection, actors: actorSelection, timePeriod: timeSelection)
 
-      
+//I have print statements here just to show in the console that the correct preferences the users chose are indeed being passed through
         print(watcherOne.actorSelection)
         print(watcherOne.genreSelection)
         print(watcherOne.timePeriod)
